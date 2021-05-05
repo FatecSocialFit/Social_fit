@@ -1,0 +1,173 @@
+﻿* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: font-family: 'Roboto', sans-serif;
+}
+
+button:focus {
+    outline-style: none;
+}
+
+.menu{
+    background:#ac65eb;
+    width: 100%;
+    height: 3.5rem;
+    display: flex
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 15px;
+}
+
+.banner {
+    display: flex;
+    max-width: 1000px;
+    width: 100%;
+    height: 450px;
+    margin: 0 auto;
+    padding: 0 25px;
+    align-items: center;
+    justify-content: center;
+    background: url("../Assets/Runner (1).jpg");
+    background-size:cover;
+    background-position:center;
+    flex-direction: column
+}
+   
+.banner > h3 {
+ 
+        color:#fff ;
+        font-size: 1.5rem
+ }
+
+.btn-baner {
+    width: 300px;
+    height: 45px;
+    background-color: transparent;
+    border-radius: 25px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.3rem;
+    border: 2px solid #fff;
+    margin: 30px auto
+}
+
+.anuncios {
+    max-width: 1000px;
+    width: 100%;
+    margin: 30px auto;
+    display: flex;
+    padding: 25px;
+    color: #555;
+    flex-direction: column;
+    text-align: center;
+}
+
+.anuncios > h5{
+    font-size: 1.5rem
+
+}
+
+    .cards-img {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 30px auto;
+        padding: 25px;
+        flex-wrap: wrap
+    }
+
+.card-body > h5 {
+
+    font-size: 1rem;
+}
+
+.card > img {
+   width:100%;
+   height: 130px
+}
+
+/**#7226d3*/
+
+.vantagens {
+    background-color: #38105c;
+    color: #fff;
+    max-width: 1000px;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 25px 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.vantagens > h5 {
+    font-size: 1.5rem;
+}
+
+.lista-vantagens{
+    margin-top: 25px;
+}
+
+
+.lista-vantagens > ul {
+    margin-left: 25px;
+    list-style-type: square;
+}
+
+ .lista-vantagens > ul > li {
+        margin-left: 25px;
+        font-size: 1rem;
+        margin-top: 15px
+}
+
+.container-aplicativos{
+    max-width:1000px;
+    width:100%;
+    height:200px;
+    margin:50px auto;
+    text-align:center;
+    display: flex;
+    flex-direction: column    
+}
+
+.loja-aplicativos{
+    max-width:1000px;
+    width: 100%;
+    margin:30px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.loja-aplicativos > h5 {
+    font-size: 1.5rem;
+    color: #555;
+}
+
+.loja-aplicativos > ul{
+    list-style: none;
+    color:#555;
+    display: flex;
+    margin: 0 auto;
+}
+
+.loja-aplicativos > ul > li {
+     color:#555;
+     margin: 15px 40px;
+     font-size:1.5rem
+ }
+
+.loja-aplicativos > ul > li > p{
+    margin-top:20px;
+}
+
+.container-footer{
+    width: 100%;
+    background-color:#080707;
+    height: 100px;
+}

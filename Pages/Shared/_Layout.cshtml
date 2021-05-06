@@ -15,49 +15,48 @@
               crossorigin="anonymous"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
     </environment>
-    <link rel="stylesheet" href="~/css/site.css?v=7" />
-    <link href="~/css/Styles_.css?v=7" rel="stylesheet" />
+    <link href="~/css/Styles_.css?v=11" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css?v=3">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 </head>
 <body>
     <header>
-        <div class="menu">
-            <nav class="navbar navbar-expand-lg navbar-light" style="margin: 0 auto; width:1000px">
-                <a  asp-area="" asp-page="#">SOCIALFIT</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav justify-content-center">
-                        <li class="nav-item">
-                            <a class="" asp-area="" asp-page="#">Quem Somos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a asp-area="" asp-page="#">Sobre nós</a>
-                        </li>
-                        <li class="nav-item">
-                            <a asp-area="" asp-page="#">Acessar conta</a>
-                        </li>
-                        <li class="nav-item">
-                            <a asp-area="" asp-page="#">Junte-se a nós</a>
-                        </li>
-                    </ul>
+        <div class="nav">
+            <div class="logo">
+
+                <a asp-page="/index">Logo</a>
+            </div>
+        
+                <div class="hamburguer active">
+                    <div class="risco"></div>
+                    <div class="risco"></div>
+                    <div class="risco"></div>
                 </div>
-            </nav>
-        </div>   
+           
+
+            <div class="menu active">
+                <li><a asp-page="#">Sobre</a></li>
+                <li><a asp-page="#">Contato</a></li>
+                <li><a asp-page="#">Acessar</a></li>
+                <li><a asp-page="#">Criar Conta</a></li>
+            </div>
+
+        </div>
     </header>
 
     <div class="container">
+     
         <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+      
     </div>
-
+    <!---
     <footer class="border-top footer text-muted">
       
            <div class="container-footer">
@@ -65,6 +64,7 @@
            </div>
 
     </footer>
+        -->
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>

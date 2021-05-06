@@ -5,47 +5,30 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
 
-<h4>Client</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="container-cadastro" >
+        <h5 style="text-align: center; font-size: 1.5rem">Criar conta</h5>
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Client.Login" class="control-label"></label>
-                <input asp-for="Client.Login" class="form-control" />
+            <div class="input-form">
+                <label asp-for="Client.Login">Email</label>
+                <input asp-for="Client.Login" />
                 <span asp-validation-for="Client.Login" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Client.Password" class="control-label"></label>
-                <input asp-for="Client.Password" class="form-control" />
+
+            <div class="input-form">
+                <label asp-for="Client.Password">Senha</label>
+                <input type="password" asp-for="Client.Password" maxlength="8" />
                 <span asp-validation-for="Client.Password" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Client.Name" class="control-label"></label>
-                <input asp-for="Client.Name" class="form-control" />
-                <span asp-validation-for="Client.Name" class="text-danger"></span>
+
+            <div class="input-form">
+                <label class="control-label">Repetir senha</label>
+                <input type="password" name="repeat-passwd" maxlength="8" />
+                <span class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Client.genre" class="control-label"></label>
-                <input asp-for="Client.genre" class="form-control" />
-                <span asp-validation-for="Client.genre" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Client.isActive" /> @Html.DisplayNameFor(model => model.Client.isActive))
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="Client.DateBorn" class="control-label"></label>
-                <input asp-for="Client.DateBorn" class="form-control" />
-                <span asp-validation-for="Client.DateBorn" class="text-danger"></span>
-            </div> 
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
+            <button type="submit" class="btn-cadastrar">Tornar-me membro</button>
         </form>
     </div>
 </div>

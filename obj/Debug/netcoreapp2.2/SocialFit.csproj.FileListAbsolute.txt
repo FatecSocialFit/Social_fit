@@ -36,3 +36,4 @@ D:\FATEC\LabEngenhariaSofware\SocialFit\SocialFit\obj\Debug\netcoreapp2.2\Razor\
 D:\FATEC\LabEngenhariaSofware\SocialFit\SocialFit\obj\Debug\netcoreapp2.2\Razor\Pages\Clients\Details.cshtml.g.cs
 D:\FATEC\LabEngenhariaSofware\SocialFit\SocialFit\obj\Debug\netcoreapp2.2\Razor\Pages\Clients\Edit.cshtml.g.cs
 D:\FATEC\LabEngenhariaSofware\SocialFit\SocialFit\obj\Debug\netcoreapp2.2\Razor\Pages\Clients\Index.cshtml.g.cs
+D:\FATEC\LabEngenhariaSofware\SocialFit\SocialFit\obj\Debug\netcoreapp2.2\Razor\Pages\Erros.cshtml.g.cs

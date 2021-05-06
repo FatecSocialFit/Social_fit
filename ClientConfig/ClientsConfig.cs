@@ -22,6 +22,9 @@ namespace SocialFit.ClientConfig
                    .IsRequired(false)
                    .HasDefaultValue("");
 
+            builder.Property(c => c.genre)
+                   .IsRequired(false);
+
             builder.Property(c => c.Login)
                    .IsRequired()
                    .HasMaxLength(45);

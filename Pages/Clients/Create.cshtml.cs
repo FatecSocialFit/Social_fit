@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using SocialFit.Data;
 using SocialFit.Models;
 
@@ -29,6 +30,9 @@ namespace SocialFit.Pages.Clients
         [BindProperty]
         public Client Client { get; set; }
 
+        public Client cli { get; set; }
+
+   
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
@@ -36,7 +40,15 @@ namespace SocialFit.Pages.Clients
                 return Page();
             }
 
+            string repeatPassword = Request.Form["repeat-passwd"];
             string password = Client.Password;
+
+            var cli = await _context.Client.FirstOrDefaultAsync(m => m.Login == Client.Login);
+
+            if (!string.Equals(password, repeatPassword) || password.Length < 8 || cli!=null)
+            {
+                return RedirectToPage("/Erros");
+            }
 
             // generate a 128-bit salt using a secure PRNG
             byte[] salt = new byte[128 / 8];
@@ -60,5 +72,6 @@ namespace SocialFit.Pages.Clients
 
             return RedirectToPage("./Index");
         }
+
     }
 }

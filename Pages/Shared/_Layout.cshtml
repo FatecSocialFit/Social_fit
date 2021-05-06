@@ -13,47 +13,58 @@
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
               crossorigin="anonymous"
-              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"/>
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
     </environment>
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/css/Styles_.css?v=11" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css?v=3">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">SocialFit</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Clients/Index">CLients</a>
-                        </li>
-                    </ul>
-                </div>
+        <div class="nav">
+            <div class="logo">
+
+                <a asp-page="/index">Logo</a>
             </div>
-        </nav>
+        
+                <div class="hamburguer active">
+                    <div class="risco"></div>
+                    <div class="risco"></div>
+                    <div class="risco"></div>
+                </div>
+           
+
+            <div class="menu active">
+                <li><a asp-page="#">Sobre</a></li>
+                <li><a asp-page="#">Contato</a></li>
+                <li><a asp-page="#">Acessar</a></li>
+                <li><a asp-page="#">Criar Conta</a></li>
+            </div>
+
+        </div>
     </header>
+
     <div class="container">
+     
         <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+      
     </div>
-
+    <!---
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - SocialFit - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
+      
+           <div class="container-footer">
+               
+           </div>
+
     </footer>
+        -->
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>

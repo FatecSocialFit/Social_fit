@@ -19,8 +19,9 @@ namespace SocialFit.Models
         public string genre { get; set; }
  
         public bool isActive { get; set; }
-        public DateTime DateBorn { get; set; }   
-        public DateTime CreatedAt { get; set; }
+
+        public Nullable<System.DateTime> DateBorn { get; set; }   
+        public Nullable<System.DateTime> CreatedAt { get; set; }
         public Nullable<System.DateTime> UpdatedAt { get; set; }
     }
 }

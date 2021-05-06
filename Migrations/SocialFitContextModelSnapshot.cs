@@ -25,11 +25,11 @@ namespace SocialFit.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("CreatedAt")
+                    b.Property<DateTime?>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasDefaultValueSql("getdate()");
 
-                    b.Property<DateTime>("DateBorn");
+                    b.Property<DateTime?>("DateBorn");
 
                     b.Property<string>("Login")
                         .IsRequired()

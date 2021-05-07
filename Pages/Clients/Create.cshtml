@@ -7,7 +7,7 @@
 
 
 <div class="row">
-    <div class="container-cadastro" >
+    <div class="col container-cadastro" >
         <h5 style="text-align: center; font-size: 1.5rem">Criar conta</h5>
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -28,15 +28,19 @@
                 <input type="password" name="repeat-passwd" maxlength="8" />
                 <span class="text-danger"></span>
             </div>
+            <div class="form-group form-check">
+                <a asp-page="#">leia os termos</a>
+                <p><input type="checkbox" name="concordar" style="width:20px; height: 20px; margin-top:20px; margin-right:20px"/>Eu aceito os termos;
+            </div>
+
+            
             <button type="submit" class="btn-cadastrar">Tornar-me membro</button>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
 }

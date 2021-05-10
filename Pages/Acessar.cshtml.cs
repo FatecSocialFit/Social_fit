@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -25,8 +26,22 @@ namespace SocialFit.Pages
 
         public async Task<IActionResult> OnPostLogarAsync()
         {
+           
             string email = Request.Form["email"];
-            return Page();
+            string passwordIn = Request.Form["passwd"];
+            Hash hash = new Hash(SHA512.Create());
+            var cli = await _context.Client.FirstOrDefaultAsync(c => c.Login == email);
+   
+            if(cli==null && !hash.VerificarSenha(passwordIn, cli.Password))
+            {
+                return Page();
+            }
+            else
+            {
+                return Page();
+            }
+           
+
         }
 
         public IActionResult OnGet()

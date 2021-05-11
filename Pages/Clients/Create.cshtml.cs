@@ -51,22 +51,11 @@ namespace SocialFit.Pages.Clients
                 return RedirectToPage("/Erros");
             }
 
-            // generate a 128-bit salt using a secure PRNG
-            byte[] salt = new byte[128 / 8];
-            using (var rng = RandomNumberGenerator.Create())
-            {
-                rng.GetBytes(salt);
-            } 
+            Hash hash = new Hash(SHA512.Create());
 
-            // derive a 256-bit subkey (use HMACSHA1 with 10,000 iterations)
-            string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
-                password: password,
-                salt: salt,
-                prf: KeyDerivationPrf.HMACSHA1,
-                iterationCount: 10000,
-                numBytesRequested: 256 / 8));
-          
-            Client.Password = hashed;
+            // generate password hash SHA512
+           
+            Client.Password = hash.CriptografarSenha(Client.Password);
 
             _context.Client.Add(Client);
             await _context.SaveChangesAsync();

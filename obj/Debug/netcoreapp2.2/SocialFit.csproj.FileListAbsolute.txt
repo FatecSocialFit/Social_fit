@@ -38,4 +38,5 @@ D:\FATEC\LabEngenhariaSofware\SocialFit\SocialFit\obj\Debug\netcoreapp2.2\Razor\
 D:\FATEC\LabEngenhariaSofware\SocialFit\SocialFit\obj\Debug\netcoreapp2.2\Razor\Pages\Clients\Index.cshtml.g.cs
 D:\FATEC\LabEngenhariaSofware\SocialFit\SocialFit\obj\Debug\netcoreapp2.2\Razor\Pages\Erros.cshtml.g.cs
 D:\FATEC\LabEngenhariaSofware\SocialFit\SocialFit\obj\Debug\netcoreapp2.2\Razor\Pages\Sucess.cshtml.g.cs
-D:\FATEC\LabEngenhariaSofware\SocialFit\SocialFit\obj\Debug\netcoreapp2.2\Razor\Pages\Acessar.cshtml.g.cs
+D:\FATEC\LabEngenhariaSofware\SocialFit\SocialFit\obj\Debug\netcoreapp2.2\Razor\Pages\PageUser.cshtml.g.cs
+D:\FATEC\LabEngenhariaSofware\SocialFit\SocialFit\obj\Debug\netcoreapp2.2\Razor\Pages\Account\Login.cshtml.g.cs

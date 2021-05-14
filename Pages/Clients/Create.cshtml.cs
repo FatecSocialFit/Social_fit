@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -13,6 +14,7 @@ using SocialFit.Models;
 
 namespace SocialFit.Pages.Clients
 {
+    [AllowAnonymous]
     public class CreateModel : PageModel
     {
         private readonly SocialFit.Data.SocialFitContext _context;
@@ -60,7 +62,7 @@ namespace SocialFit.Pages.Clients
             _context.Client.Add(Client);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("/Success");
+            return RedirectToPage("Sucess");
         }
 
     }

@@ -1,8 +1,6 @@
 ﻿@page
-@model SocialFit.Pages.AcessarModel
-
+@model SocialFit.Pages.Account.LoginModel
 @{
-    ViewData["Title"] = "Acessar";
 }
 
 <div class="row">
@@ -12,13 +10,13 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="input-form">
                 <label asp-for="Client.Login">Email</label>
-                <input asp-for="Client.Login"  name="email"/>
+                <input asp-for="Client.Login" name="email" />
                 <span asp-validation-for="Client.Login" class="text-danger"></span>
             </div>
 
             <div class="input-form">
                 <label for="passwd">Senha</label>
-                <input type="password" asp-for="Client.Password"  name="passwd" maxlength="8" />
+                <input type="password" asp-for="Client.Password" name="passwd" maxlength="8" />
                 <span asp-validation-for="Client.Password" class="text-danger"></span>
             </div>
 
@@ -26,14 +24,14 @@
                 <a asp-page="#">Lembrar senha</a>
             </div>
 
-            <button type="submit" id="btn-logar" class="btn-cadastrar" asp-page-handler="Logar">Acessar Portal</button>
+            <button type="submit" id="btn-logar" class="btn-cadastrar">Acessar Portal</button>
         </form>
     </div>
 </div>
+
 
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     <script src="~/js/login.js"></script>
 }
-

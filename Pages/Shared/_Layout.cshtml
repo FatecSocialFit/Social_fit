@@ -16,7 +16,7 @@
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
     </environment>
     <link href="~/css/site.css" rel="stylesheet" />
-    <link href="~/css/Styles_.css?v=11" rel="stylesheet" />
+    <link href="~/css/Styles_.css?v=12" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css?v=3">
@@ -31,21 +31,35 @@
 
                 <a asp-page="/index">Logo</a>
             </div>
-        
-                <div class="hamburguer active">
-                    <div class="risco"></div>
-                    <div class="risco"></div>
-                    <div class="risco"></div>
-                </div>
-           
 
-            <div class="menu active">
-                <li><a asp-page="">Sobre</a></li>
-                <li><a asp-page="">Contato</a></li>
-                <li><a asp-page="/Acessar">Acessar</a></li>
-                <li><a asp-page="/Clients/Create">Criar Conta</a></li>
+            <div class="hamburguer active">
+                <div class="risco"></div>
+                <div class="risco"></div>
+                <div class="risco"></div>
             </div>
 
+           
+            <div class="menu active">
+                @{
+                    if (User.Identity.IsAuthenticated)
+                    {
+                        <li><a asp-page="">Meus treinos</a></li>
+                        <li><a asp-page="">Página usuário</a></li>
+                        <li><a asp-page="">Configuração</a></li>
+                    }
+                    else
+                    {
+                        <div class="menu active">
+                            <li><a asp-page="">Sobre</a></li>
+                            <li><a asp-page="">Contato</a></li>
+                            <li><a asp-page="/Account/Login">Acessar</a></li>
+                            <li><a asp-page="/Clients/Create">Criar Conta</a></li>
+                        </div>
+                    }
+                }
+            </div>
+           
+      
         </div>
     </header>
 

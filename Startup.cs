@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using Microsoft.EntityFrameworkCore;
 using SocialFit.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace SocialFit
 {
@@ -28,6 +29,9 @@ namespace SocialFit
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(opt => opt.LoginPath = "/Account/Login");
 
             services.AddSession(options =>
             {
@@ -67,6 +71,7 @@ namespace SocialFit
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseAuthentication();
             app.UseSession();
             app.UseCookiePolicy();
             app.UseMvc();

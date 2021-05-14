@@ -12993,6 +12993,7 @@
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.AspNetCore.Session >= 2.2.0",
       "Microsoft.AspNetCore.StaticFiles >= 2.2.0",
+      "Microsoft.AspnetCore.Authentication.Cookies >= 2.2.0",
       "Microsoft.EntityFrameworkCore.Design >= 2.2.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 2.2.0",
       "Microsoft.EntityFrameworkCore.Tools >= 2.2.0",
@@ -13069,6 +13070,10 @@
             "version": "[2.2.0, )"
           },
           "Microsoft.AspNetCore.StaticFiles": {
+            "target": "Package",
+            "version": "[2.2.0, )"
+          },
+          "Microsoft.AspnetCore.Authentication.Cookies": {
             "target": "Package",
             "version": "[2.2.0, )"
           },

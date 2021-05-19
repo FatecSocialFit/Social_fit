@@ -3,11 +3,11 @@
 @{
 }
 
-<div class="row">
-    <div class="col container-cadastro">
-        <h5 style="text-align: center; font-size: 1.5rem">Acessar Portal</h5>
+
+<div class="row justify-content-center align-content-md-start mt-5">
+    <div class="col-10 col-md-4">
+        <h5 class="text-center">Acessar Portal</h5>
         <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="input-form">
                 <label asp-for="Client.Login">Email</label>
                 <input asp-for="Client.Login" name="email" />
@@ -20,16 +20,16 @@
                 <span asp-validation-for="Client.Password" class="text-danger"></span>
             </div>
 
-            <div class="form-group form-check" style="margin-top:60px">
-                <a asp-page="#">Lembrar senha</a>
+            <div class="form-group d-flex flex-column">
+                <a asp-page="#">esqueci senha</a>
+                <button type="submit" class="btn-cadastrar mt-3">Acessar Portal</button>
             </div>
-
-            <button type="submit" id="btn-logar" class="btn-cadastrar">Acessar Portal</button>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         </form>
     </div>
 </div>
 
-
+   
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

@@ -1,8 +1,9 @@
-﻿$(document).ready(function () {
-    aleret("aaaaaaaaaaaaaaa");
+﻿
+/***busca um endereço pelo cep****/
 
-})
-
+$(document).ready(function () {
+	
+});
 
 
 /*
@@ -22,3 +23,7 @@ $.ajax({
     error: 
     }
 });
+
+
+
+

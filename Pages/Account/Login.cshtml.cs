@@ -27,8 +27,6 @@ namespace SocialFit.Pages.Account
         public async Task<IActionResult> OnPost()
         {
            
-
-
             if(!IsUserAuthenticade(Request.Form["email"], Request.Form["passwd"]))
             {
                 ModelState.AddModelError(string.Empty, "Usuário ou senha inválidos");
@@ -48,8 +46,9 @@ namespace SocialFit.Pages.Account
         }
 
 
-        public async Task<IActionResult> OnPostLogout()
+        public async Task<IActionResult> OnPostLogoutAsync()
         {
+           
             await HttpContext.SignOutAsync();
             return RedirectToPage("/Index");
         }
@@ -59,10 +58,10 @@ namespace SocialFit.Pages.Account
         {
             Hash hash = new Hash(SHA512.Create());
             var cli = _context.Client.FirstOrDefault(c => c.Login == email);
-            if(hash.VerificarSenha(senha, cli.Password))
+            if(cli!=null && hash.VerificarSenha(senha, cli.Password))
             {
                 return true;
-            }
+            }      
             return false;
         }
     }

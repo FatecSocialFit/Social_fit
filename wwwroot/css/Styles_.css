@@ -5,114 +5,14 @@
     font-family: font-family: 'Roboto', sans-serif;
 }
 
-.hamburguer {
-    width: 40px;
-    height: 40px;
-    border: 1px solid #fff;
-    border-radius:10%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    display: none;
-    z-index: 999;
-}
-
-.risco{
-    width:25px;
-    height:3px;
-    border-radius:2px;
-    background-color: #fff
-}
-
-.menu{
-    display: flex;
-   
-}
-
-
-    .menu li a {
-        color: #fff;
-        margin: 0px 20px;
-        font-size: 23px;
-    }
-
- .menu li a:hover {
-       color: #552605;
-       transition:0.7s;
-       text-decoration: none;
-      
-  
-}
-
-
-
-header {
-    width: 100%;
-    background-color: #ff6a00;
-    padding: 10px 20px;
-    position: fixed;
-    z-index: 999;
-}
-
-.nav{
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding:0 40px;
-}
-
-.logo{
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
-    background-color: #fff;
-}
-
-
-@media screen and (max-width: 800px){
-    .hamburguer{
-        display:flex;
-        z-index:999;  
-        cursor:pointer;
-    }
-    .menu{
-        position: fixed;
-        right:-100%;
-        top:0;
-        height: 100vh;
-        width:250px;
-        margin: 0;
-        background-color:rgba(194, 82, 2, 0.75);  
-        flex-direction: column;
-        align-items: center;
-        padding: 100px 20px;
-        transition: 0.7s;
-    }
-    .nav{
-        padding:0px 10px;
-    }
-
-    .menu li{
-        margin-top: 20px;
-    }
-
-    .menu.active{
-        right: 0;
-    }
-
-}
-
 
 .banner {
     width: 100%;
     max-width:1200px;
     display: flex;
     height: 450px;
-    margin: 70px auto;
-    padding: 0 25px;s
+    margin: 0 auto;
+    padding: 0 25px;
     align-items: center;
     justify-content: center;
     background: url("../Assets/Runner (1).jpg");
@@ -215,7 +115,7 @@ header {
 /**#7226d3*/
 
 .vantagens {
-    background-color: #ff6a00;
+    background-color: #808080;
     color: #fff;
     max-width: 1200px;
     margin: 0 auto;
@@ -287,11 +187,7 @@ header {
     margin-top:20px;
 }
 
-.container-footer{
-    width: 100%;
-    background-color:#b65109;
-    height: 100px;
-}
+
 
 input {
     border-bottom: 2.5px solid #555;
@@ -312,35 +208,46 @@ input {
   
 }
 
-.container-cadastro{
-    
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    width: 250px;
-    margin-left:auto;
-    margin-right: auto;
-    margin-top:80px;
-    padding: 20px 15px;
-    align-items: center;
-}
 
 label {
     font-size: 1rem
 }
 
 .btn-cadastrar {
-    width: 300px;
-    height: 45px;
     background-color: tomato;
     border-radius: 25px;
     border: none;
     color: #fff;
     font-size: 1.3rem;
     border: 2px solid #fff;
-    margin: 30px auto;
+    padding: 5px 10px;
 }
 
 .btn-cadastrar:focus{
     outline-style: none;
+   
+}
+
+.btn-logout{
+    background-color: transparent;
+    border: none;
+}
+
+.dropdown-links{
+    display: block;
+    width: 100%;
+    padding: 0.25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
+.dropdown-links:hover, .dropdown-links:focus {
+    color: #16181b;
+    text-decoration: none;
+    background-color: #16181b;
 }

@@ -1,8 +1,17 @@
+<<<<<<< HEAD
 ﻿$(document).ready(function () {
     aleret("aaaaaaaaaaaaaaa");
 
 })
 
+=======
+﻿
+/***busca um endereço pelo cep****/
+
+$(document).ready(function () {
+	
+});
+>>>>>>> 97abeff861750ea6d9da11b11eaa77d7c0c1c6d1
 
 
 /*
@@ -21,4 +30,12 @@ $.ajax({
     },
     error: 
     }
+<<<<<<< HEAD
 });
+=======
+});
+
+
+
+
+>>>>>>> 97abeff861750ea6d9da11b11eaa77d7c0c1c6d1

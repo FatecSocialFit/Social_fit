@@ -18,8 +18,11 @@ namespace SocialFit.Data
         protected override void OnModelCreating(ModelBuilder modeBuilder)
         {
             modeBuilder.ApplyConfiguration(new ClientsConfig());
+
             base.OnModelCreating(modeBuilder);
         }
         public DbSet<SocialFit.Models.Client> Client { get; set; }
+       
+
     }
 }

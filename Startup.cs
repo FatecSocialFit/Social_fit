@@ -1,16 +1,13 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using SocialFit.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace SocialFit
 {
@@ -33,11 +30,29 @@ namespace SocialFit
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(opt => opt.LoginPath = "/Account/Login");
+
+            services.AddSession(options =>
+            {
+                // Set a short timeout for easy testing.
+                options.IdleTimeout = TimeSpan.FromSeconds(10);
+                options.Cookie.HttpOnly = true;
+                // Make the session cookie essential
+                options.Cookie.IsEssential = true;
+            });
+
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddDbContext<SocialFitContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("SocialFitContext")));
+
+
+            services.AddDistributedMemoryCache();
+
+           
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,9 +71,11 @@ namespace SocialFit
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseAuthentication();
+            app.UseSession();
             app.UseCookiePolicy();
-
             app.UseMvc();
+           
         }
     }
 }

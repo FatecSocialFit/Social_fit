@@ -1,0 +1,37 @@
+﻿@page
+@model SocialFit.Pages.Account.LoginModel
+@{
+}
+
+
+<div class="row justify-content-center align-content-md-start mt-5">
+    <div class="col-10 col-md-4">
+        <h5 class="text-center">Acessar Portal</h5>
+        <form method="post">
+            <div class="input-form">
+                <label asp-for="Client.Login">Email</label>
+                <input asp-for="Client.Login" name="email" />
+                <span asp-validation-for="Client.Login" class="text-danger"></span>
+            </div>
+
+            <div class="input-form">
+                <label for="passwd">Senha</label>
+                <input type="password" asp-for="Client.Password" name="passwd" maxlength="8" />
+                <span asp-validation-for="Client.Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group d-flex flex-column">
+                <a asp-page="#">esqueci senha</a>
+                <button type="submit" class="btn-cadastrar mt-3">Acessar Portal</button>
+            </div>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        </form>
+    </div>
+</div>
+
+   
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/js/login.js"></script>
+}

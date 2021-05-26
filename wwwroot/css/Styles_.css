@@ -5,6 +5,7 @@
     font-family: font-family: 'Roboto', sans-serif;
 }
 
+<<<<<<< HEAD
 .hamburguer {
     width: 40px;
     height: 40px;
@@ -103,14 +104,21 @@ header {
 
 }
 
+=======
+>>>>>>> 97abeff861750ea6d9da11b11eaa77d7c0c1c6d1
 
 .banner {
     width: 100%;
     max-width:1200px;
     display: flex;
     height: 450px;
+<<<<<<< HEAD
     margin: 70px auto;
     padding: 0 25px;s
+=======
+    margin: 0 auto;
+    padding: 0 25px;
+>>>>>>> 97abeff861750ea6d9da11b11eaa77d7c0c1c6d1
     align-items: center;
     justify-content: center;
     background: url("../Assets/Runner (1).jpg");
@@ -142,7 +150,11 @@ header {
         outline-style: none;
     }
 
+<<<<<<< HEAD
 @media only screen and (max-width: 400px) {
+=======
+@media only screen and (max-width: 800px) {
+>>>>>>> 97abeff861750ea6d9da11b11eaa77d7c0c1c6d1
   .banner{
       height:200px
   }
@@ -213,7 +225,7 @@ header {
 /**#7226d3*/
 
 .vantagens {
-    background-color: #ff6a00;
+    background-color: #808080;
     color: #fff;
     max-width: 1200px;
     margin: 0 auto;
@@ -285,11 +297,15 @@ header {
     margin-top:20px;
 }
 
+<<<<<<< HEAD
 .container-footer{
     width: 100%;
     background-color:#b65109;
     height: 100px;
 }
+=======
+
+>>>>>>> 97abeff861750ea6d9da11b11eaa77d7c0c1c6d1
 
 input {
     border-bottom: 2.5px solid #555;
@@ -310,6 +326,7 @@ input {
   
 }
 
+<<<<<<< HEAD
 .container-cadastro{
     
     max-width: 400px;
@@ -322,23 +339,55 @@ input {
     padding: 20px 15px;
     align-items: center;
 }
+=======
+>>>>>>> 97abeff861750ea6d9da11b11eaa77d7c0c1c6d1
 
 label {
     font-size: 1rem
 }
 
 .btn-cadastrar {
-    width: 300px;
-    height: 45px;
     background-color: tomato;
     border-radius: 25px;
     border: none;
     color: #fff;
     font-size: 1.3rem;
     border: 2px solid #fff;
+<<<<<<< HEAD
     margin: 30px auto;
+=======
+    padding: 5px 10px;
+>>>>>>> 97abeff861750ea6d9da11b11eaa77d7c0c1c6d1
 }
 
 .btn-cadastrar:focus{
     outline-style: none;
+<<<<<<< HEAD
+=======
+   
+}
+
+.btn-logout{
+    background-color: transparent;
+    border: none;
+}
+
+.dropdown-links{
+    display: block;
+    width: 100%;
+    padding: 0.25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
+.dropdown-links:hover, .dropdown-links:focus {
+    color: #16181b;
+    text-decoration: none;
+    background-color: #16181b;
+>>>>>>> 97abeff861750ea6d9da11b11eaa77d7c0c1c6d1
 }

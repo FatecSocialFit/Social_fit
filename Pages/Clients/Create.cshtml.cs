@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -13,6 +14,7 @@ using SocialFit.Models;
 
 namespace SocialFit.Pages.Clients
 {
+    [AllowAnonymous]
     public class CreateModel : PageModel
     {
         private readonly SocialFit.Data.SocialFitContext _context;
@@ -51,27 +53,20 @@ namespace SocialFit.Pages.Clients
                 return RedirectToPage("/Erros");
             }
 
-            // generate a 128-bit salt using a secure PRNG
-            byte[] salt = new byte[128 / 8];
-            using (var rng = RandomNumberGenerator.Create())
-            {
-                rng.GetBytes(salt);
-            } 
+            Hash hash = new Hash(SHA512.Create());
 
-            // derive a 256-bit subkey (use HMACSHA1 with 10,000 iterations)
-            string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
-                password: password,
-                salt: salt,
-                prf: KeyDerivationPrf.HMACSHA1,
-                iterationCount: 10000,
-                numBytesRequested: 256 / 8));
-          
-            Client.Password = hashed;
+            // generate password hash SHA512
+           
+            Client.Password = hash.CriptografarSenha(Client.Password);
 
             _context.Client.Add(Client);
             await _context.SaveChangesAsync();
 
+<<<<<<< HEAD
             return RedirectToPage("/Success");
+=======
+            return RedirectToPage("Sucess");
+>>>>>>> 97abeff861750ea6d9da11b11eaa77d7c0c1c6d1
         }
 
     }

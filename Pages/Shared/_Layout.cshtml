@@ -16,7 +16,11 @@
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
     </environment>
     <link href="~/css/site.css" rel="stylesheet" />
+<<<<<<< HEAD
     <link href="~/css/Styles_.css?v=11" rel="stylesheet" />
+=======
+    <link href="~/css/Styles_.css?v=13" rel="stylesheet" />
+>>>>>>> 97abeff861750ea6d9da11b11eaa77d7c0c1c6d1
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css?v=3">
@@ -25,52 +29,110 @@
 
 </head>
 <body>
-    <header>
-        <div class="nav">
-            <div class="logo">
+    <div class="d-flex flex-column wrapper">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark shadow-sm border-bottom" style="background-color: #808080">
+                <div class="container">
+                    <a class="navbar-brand" asp-page="/Index"><b>SOCIALFIT</b></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <span class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item active">
+                                <a class="nav-link text-white" asp-page="Index">Contato <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link text-white" asp-page="About">Sobre <span class="sr-only">(current)</span></a>
+                            </li>
+                        </ul>
 
-                <a asp-page="/index">Logo</a>
-            </div>
-        
-                <div class="hamburguer active">
-                    <div class="risco"></div>
-                    <div class="risco"></div>
-                    <div class="risco"></div>
-                </div>
-           
+                        <ul class="navbar-nav">
+                            @{ if (User.Identity.IsAuthenticated)
+                                {
+                                    <li class="nav-item active">
+                                        <a class="nav-link text-white" asp-page="#">Home <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link text-white" asp-page="#">Meus treinos <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <div class="rounded-circle bg-light mx-3" style="width:30px; height:30px; margin-top:5px"></div>
+                                    </li>
 
+<<<<<<< HEAD
             <div class="menu active">
                 <li><a asp-page="">Sobre</a></li>
                 <li><a asp-page="">Contato</a></li>
                 <li><a asp-page="/Acessar">Acessar</a></li>
                 <li><a asp-page="/Clients/Create">Criar Conta</a></li>
             </div>
+=======
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+>>>>>>> 97abeff861750ea6d9da11b11eaa77d7c0c1c6d1
 
-        </div>
-    </header>
+                                        </a>
+                                        <div class="dropdown-menu" style="background-color:#555" aria-labelledby="dropdownMenuReference">
+                                            <a class="dropdown-links text-white" href="#">Perfil</a>
+                                            <a class="dropdown-links text-white" href="#">Promover treino</a>
+                                            <div class="dropdown-divider"></div>
+                                            <form method="post">
+                                                <button type="submit" asp-page="/Account/Login" asp-page-handler="Logout" class="btn-logout dropdown-links text-white">sair</button>
+                                            </form>
 
-    <div class="container">
-     
-        <partial name="_CookieConsentPartial" />
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-      
+                                        </div>
+                                    </li>
+
+                                }
+                                else
+                                {
+                                    <li class="nav-item active">
+                                        <a class="nav-link text-white" asp-page="/Account/Login">Acessar <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link text-white" asp-page="/Clients/create">Criar Conta <span class="sr-only">(current)</span></a>
+                                    </li>
+                                }
+                            }
+
+                        </ul>
+                </div>
     </div>
+<<<<<<< HEAD
    
     <footer class="footer text-muted">
       
            <div class="container-footer">
                
            </div>
+=======
+    </nav>
+    </header>
+    <partial name="_CookieConsentPartial" />
+    <main role="main" class="flex-fill">
+        <div class="container">
+            @RenderBody()
+        </div>
+    </main>
+>>>>>>> 97abeff861750ea6d9da11b11eaa77d7c0c1c6d1
 
+    <footer class="border-top footer text-muted bg-light">
+        <div class="container">
+            &copy; 2021 - RazorPagesMovie - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
     </footer>
+<<<<<<< HEAD
      
+=======
+    </div>
+>>>>>>> 97abeff861750ea6d9da11b11eaa77d7c0c1c6d1
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
     </environment>
+
     <environment exclude="Development">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
                 asp-fallback-src="~/lib/jquery/dist/jquery.min.js"

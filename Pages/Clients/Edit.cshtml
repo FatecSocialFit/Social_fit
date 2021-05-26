@@ -5,54 +5,55 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
-
-<h4>Client</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="row justify-content-center mt-3">
+    <div class="col-12 col-md-4 text-center">
+        <h2>Editar perfil</h2>
+        <hr />
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="d-flex rounded-circle my-4 text-center align-items-center justify-content-center" style="width:100px; height:100px;background-color:#ccc; margin: auto auto">
+                <i class='fas fa-camera' style='font-size:36px;color:rgb(0, 0, 0,0.3)'></i>
+            </div>
             <input type="hidden" asp-for="Client.Id" />
-            <div class="form-group">
-                <label asp-for="Client.Login" class="control-label"></label>
-                <input asp-for="Client.Login" class="form-control" />
-                <span asp-validation-for="Client.Login" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Client.Password" class="control-label"></label>
-                <input asp-for="Client.Password" class="form-control" />
-                <span asp-validation-for="Client.Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Client.Name" class="control-label"></label>
-                <input asp-for="Client.Name" class="form-control" />
+
+            <div class="input-form">
+                <input asp-for="Client.Name" placeholder="Nome Completo" />
                 <span asp-validation-for="Client.Name" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Client.genre" class="control-label"></label>
-                <input asp-for="Client.genre" class="form-control" />
+            <div class="input-form">
+                <select asp-for="Client.genre" value="Client.genre">
+                    <option>Masculino</option>
+                    <option>Feminino</option>
+                </select>
                 <span asp-validation-for="Client.genre" class="text-danger"></span>
             </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Client.isActive" /> @Html.DisplayNameFor(model => model.Client.isActive)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="Client.DateBorn" class="control-label"></label>
-                <input asp-for="Client.DateBorn" class="form-control" />
+
+            <div class="input-form">
+                <input asp-for="Client.DateBorn" />
                 <span asp-validation-for="Client.DateBorn" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+
+            <div class="input-form">
+                <input type="hidden" asp-for="Client.Login" placeholder="email@exemplo.com" />            
+            </div>
+
+            <div class="input-form">
+                <input type="hidden" asp-for="Client.Password" placeholder="Senha" />            
+            </div>
+
+            <div class="d-flex  justify-content-center">
+
+                <button type="submit" class="btn-cadastrar mt-3">Salvar alterações</button>
+            </div>
+            <div class="d-flex  justify-content-center">
+                <a asp-page="./index" class="mt-4">voltar</a>
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="./Index">Back to List</a>
+   
 </div>
 
 @section Scripts {

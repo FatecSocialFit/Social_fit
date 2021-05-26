@@ -33,14 +33,17 @@ namespace SocialFit.Pages.Account
                 return Page();
             }
 
+            var cli = _context.Client.FirstOrDefault(c => c.Login.Equals(Request.Form["email"]));
+
             var claims = new List<Claim>{
-                new Claim(ClaimTypes.Name, Request.Form["email"])
+                new Claim(ClaimTypes.Name, Request.Form["email"]),             
             };
 
             var userIdentify = new ClaimsIdentity(claims, "login");
             ClaimsPrincipal principal = new ClaimsPrincipal(userIdentify);
 
             await HttpContext.SignInAsync(principal);
+            ViewData["usuario"] = cli.Id.ToString();
 
             return RedirectToPage("/PageUser");
         }

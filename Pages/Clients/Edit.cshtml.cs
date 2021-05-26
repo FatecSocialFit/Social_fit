@@ -25,14 +25,10 @@ namespace SocialFit.Pages.Clients
         [BindProperty]
         public Client Client { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync()
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            Client = await _context.Client.FirstOrDefaultAsync(m => m.Id == id);
+           
+            Client = await _context.Client.FirstOrDefaultAsync(m => m.Login.Equals(User.Identity.Name));
 
             if (Client == null)
             {
@@ -43,11 +39,7 @@ namespace SocialFit.Pages.Clients
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
+           
             _context.Attach(Client).State = EntityState.Modified;
 
             try

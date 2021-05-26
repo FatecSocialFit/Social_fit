@@ -189,7 +189,7 @@
 
 
 
-input {
+input , select{
     border-bottom: 2.5px solid #555;
     border-top: none;
     border-left: none;
@@ -199,7 +199,7 @@ input {
     padding-left:10px;
 }
 
- input:focus {
+ input:focus, select:focus {
         outline-style: none;
   }
 

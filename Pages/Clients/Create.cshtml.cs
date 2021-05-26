@@ -42,10 +42,11 @@ namespace SocialFit.Pages.Clients
 
             string repeatPassword = Request.Form["repeat-passwd"];
             string password = Client.Password;
+            string aceitar = Request.Form["concordar"];
 
             var cli = await _context.Client.FirstOrDefaultAsync(m => m.Login == Client.Login);
 
-            if (!string.Equals(password, repeatPassword) || password.Length < 8 || cli!=null)
+            if (!string.Equals(password, repeatPassword) || password.Length < 8 || cli!=null || aceitar==null )
             {
                 return RedirectToPage("/Erros");
             }
@@ -70,7 +71,7 @@ namespace SocialFit.Pages.Clients
             _context.Client.Add(Client);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Success");
         }
 
     }

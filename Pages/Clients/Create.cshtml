@@ -12,26 +12,23 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="input-form">
-                <label asp-for="Client.Login">Email</label>
-                <input asp-for="Client.Login" />
+                <input placeholder="E-Mail" asp-for="Client.Login" />
                 <span asp-validation-for="Client.Login" class="text-danger"></span>
             </div>
 
             <div class="input-form">
-                <label asp-for="Client.Password">Senha</label>
-                <input type="password" asp-for="Client.Password" maxlength="8" />
+                <input placeholder="Senha" type="password" asp-for="Client.Password" maxlength="8" />
                 <span asp-validation-for="Client.Password" class="text-danger"></span>
             </div>
 
             <div class="input-form">
-                <label class="control-label">Repetir senha</label>
-                <input type="password" name="repeat-passwd" maxlength="8" />
+                <input placeholder="Repetir senha" type="password" name="repeat-passwd" maxlength="8" />
                 <span class="text-danger"></span>
             </div>
             <div class="form-group form-check">
-                <a asp-page="#">leia os termos</a>
-                <p><input type="checkbox" name="concordar" style="width:20px; height: 20px; margin-top:20px; margin-right:20px" />Eu aceito os termos;
-            </div>
+                <!--<a asp-page="#">Leia os Termos</a>-->
+				<p><input type="checkbox" name="concordar" style="width:20px; height: 20px; margin-top:20px; margin-right:20px" />Eu aceito os <a asp-page="#">termos</a>.
+</div>
             <div class="form-group d-flex flex-column">
                 <button  type="submit" class="btn-cadastrar mt-3">Tornar-me membro</button>
             </div>

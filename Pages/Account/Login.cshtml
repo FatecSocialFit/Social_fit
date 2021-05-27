@@ -9,21 +9,20 @@
         <h5 class="text-center">Acessar Portal</h5>
         <form method="post">
             <div class="input-form">
-                <label asp-for="Client.Login">Email</label>
-                <input asp-for="Client.Login" name="email" />
+                <input placeholder="E-Mail" asp-for="Client.Login" name="email" />
                 <span asp-validation-for="Client.Login" class="text-danger"></span>
             </div>
 
             <div class="input-form">
-                <label for="passwd">Senha</label>
-                <input type="password" asp-for="Client.Password" name="passwd" maxlength="8" />
+                <input placeholder="Senha" type="password" asp-for="Client.Password" name="passwd" maxlength="8" />
                 <span asp-validation-for="Client.Password" class="text-danger"></span>
             </div>
 
-            <div class="form-group d-flex flex-column">
-                <a asp-page="#">esqueci senha</a>
-                <button type="submit" class="btn-cadastrar mt-3">Acessar Portal</button>
-            </div>
+			<div class="form-group d-flex flex-column">
+				<button type="submit" class="btn-cadastrar mt-3">Acessar Portal</button>
+                <h1></h1><h1></h1><h1></h1>
+				<a style="text-align: center" asp-page="#">Esqueci Senha</a>
+			</div>
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         </form>
     </div>

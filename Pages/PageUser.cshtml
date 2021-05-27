@@ -3,7 +3,7 @@
 
 @{
     ViewData["Title"] = "PageUser";
-    
+
 }
 
 <h1>PageUser</h1>
@@ -15,65 +15,66 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Client[0].Login)
+                @Html.DisplayNameFor(model => model.Client.Login)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Client[0].Password)
+                @Html.DisplayNameFor(model => model.Client.Password)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Client[0].Name)
+                @Html.DisplayNameFor(model => model.Client.Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Client[0].genre)
+                @Html.DisplayNameFor(model => model.Client.genre)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Client[0].isActive)
+                @Html.DisplayNameFor(model => model.Client.isActive)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Client[0].DateBorn)
+                @Html.DisplayNameFor(model => model.Client.DateBorn)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Client[0].CreatedAt)
+                @Html.DisplayNameFor(model => model.Client.CreatedAt)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Client[0].UpdatedAt)
+                @Html.DisplayNameFor(model => model.Client.UpdatedAt)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Client) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Login)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Password)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.genre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.isActive)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateBorn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedAt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UpdatedAt)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+    
+            <tr>
+                <td>
+                    @Html.DisplayFor(model =>model.Client.Login)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Client.Password)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Client.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Client.genre)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Client.isActive)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Client.DateBorn)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Client.CreatedAt)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Client.UpdatedAt)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@Model.Client.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@Model.Client.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@Model.Client.Id">Delete</a>
+                </td>
+            </tr>
+
+      
     </tbody>
 </table>

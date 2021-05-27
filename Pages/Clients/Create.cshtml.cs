@@ -62,11 +62,7 @@ namespace SocialFit.Pages.Clients
             _context.Client.Add(Client);
             await _context.SaveChangesAsync();
 
-<<<<<<< HEAD
-            return RedirectToPage("/Success");
-=======
-            return RedirectToPage("Sucess");
->>>>>>> 97abeff861750ea6d9da11b11eaa77d7c0c1c6d1
+            return RedirectToPage("Index");
         }
 
     }

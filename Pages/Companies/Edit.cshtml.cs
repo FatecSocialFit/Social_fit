@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -10,9 +9,8 @@ using Microsoft.EntityFrameworkCore;
 using SocialFit.Data;
 using SocialFit.Models;
 
-namespace SocialFit.Pages.Clients
+namespace SocialFit.Pages.Companies
 {
-    [Authorize]
     public class EditModel : PageModel
     {
         private readonly SocialFit.Data.SocialFitContext _context;
@@ -23,14 +21,18 @@ namespace SocialFit.Pages.Clients
         }
 
         [BindProperty]
-        public Client Client { get; set; }
+        public Company Company { get; set; }
 
-        public async Task<IActionResult> OnGetAsync()
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
-           
-            Client = await _context.Client.FirstOrDefaultAsync(m => m.Login.Equals(User.Identity.Name));
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-            if (Client == null)
+            Company = await _context.Companies.FirstOrDefaultAsync(m => m.Id == id);
+
+            if (Company == null)
             {
                 return NotFound();
             }
@@ -39,8 +41,12 @@ namespace SocialFit.Pages.Clients
 
         public async Task<IActionResult> OnPostAsync()
         {
-           
-            _context.Attach(Client).State = EntityState.Modified;
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            _context.Attach(Company).State = EntityState.Modified;
 
             try
             {
@@ -48,7 +54,7 @@ namespace SocialFit.Pages.Clients
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ClientExists(Client.Id))
+                if (!CompanyExists(Company.Id))
                 {
                     return NotFound();
                 }
@@ -61,9 +67,9 @@ namespace SocialFit.Pages.Clients
             return RedirectToPage("./Index");
         }
 
-        private bool ClientExists(int id)
+        private bool CompanyExists(int id)
         {
-            return _context.Client.Any(e => e.Id == id);
+            return _context.Companies.Any(e => e.Id == id);
         }
     }
 }

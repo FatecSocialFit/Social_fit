@@ -307,7 +307,7 @@ header {
 
 >>>>>>> 97abeff861750ea6d9da11b11eaa77d7c0c1c6d1
 
-input {
+input , select{
     border-bottom: 2.5px solid #555;
     border-top: none;
     border-left: none;
@@ -317,7 +317,7 @@ input {
     padding-left:10px;
 }
 
- input:focus {
+ input:focus, select:focus {
         outline-style: none;
   }
 
@@ -347,7 +347,7 @@ label {
 }
 
 .btn-cadastrar {
-    background-color: tomato;
+    background-color: #232ef2;
     border-radius: 25px;
     border: none;
     color: #fff;

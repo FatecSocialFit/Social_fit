@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -23,12 +24,15 @@ namespace SocialFit.Pages
             _context = context;
         }
 
-        public IList<Client> Client { get;set; }
+        public Client Client { get;set; }
 
         public async Task OnGetAsync()
         {
-            var name = HttpContext.Session.GetString(SessionKeyName);
-            Client = await _context.Client.ToListAsync();
+
+            // Client = await _context.Client.ToListAsync();
+           Client = await _context.Client.FirstOrDefaultAsync(b => b.Login.Equals(User.Identity.Name));
+
+
         }
     }
 }

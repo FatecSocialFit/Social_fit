@@ -22,6 +22,7 @@ namespace SocialFit.Data
             base.OnModelCreating(modeBuilder);
         }
         public DbSet<SocialFit.Models.Client> Client { get; set; }
+        public DbSet<SocialFit.Models.Company> Companies { get; set; }
        
 
     }

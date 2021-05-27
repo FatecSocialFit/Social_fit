@@ -1,0 +1,40 @@
+﻿@page
+@model SocialFit.Pages.Companies.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div class="row justify-content-center my-3">
+	<div class="col-10 col-md-4">
+		<h5 style="text-align: center; font-size: 1.5rem">Criar conta empresarial</h5>
+		<form method="post">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="input-form">
+				<input placeholder="Nome" asp-for="Company.Nome" />
+				<span asp-validation-for="Company.Nome" class="text-danger"></span>
+			</div>
+			<div class="input-form">
+				<input placeholder="CNPJ" asp-for="Company.Cnpj" />
+				<span asp-validation-for="Company.Cnpj" class="text-danger"></span>
+			</div>
+			<div class="input-form">
+				<input placeholder="Endereço" asp-for="Company.Endereco" />
+				<span asp-validation-for="Company.Endereco" class="text-danger"></span>
+			</div>
+			<div class="form-group form-check">
+				<!--<a asp-page="#">Leia os Termos</a>-->
+				<p><input type="checkbox" name="concordar" style="width:20px; height: 20px; margin-top:20px; margin-right:20px" />Eu aceito os <a asp-page="#">termos</a>.
+			</div>
+			<div class="form-group d-flex flex-column">
+				<button type="submit" class="btn-cadastrar mt-3">Cadastrar empresa</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
